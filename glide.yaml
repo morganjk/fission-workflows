@@ -5,7 +5,7 @@ excludeDirs:
 - local
 import:
 - package: github.com/fission/fission
-  version: ^0.9.1
+  version: ^0.10.0
 - package: github.com/sirupsen/logrus
   version: v1.0.5
 - package: github.com/urfave/cli
@@ -36,7 +36,7 @@ import:
   - graph/topo
   - graph/simple
 - package: github.com/golang/protobuf
-  version: ~v1.0.0
+  version: ^v1.1.0
 - package: google.golang.org/grpc
   version: ~1.10.0
 - package: github.com/grpc-ecosystem/go-grpc-prometheus
