@@ -35,9 +35,9 @@ cleanup_fission() {
 
     # Trigger deletion of all namespaces before waiting - for concurrency of deletion
     emph "Forcing deletion of namespaces..."
-    kubectl delete ns/${NS} --now > /dev/null 2>&1 # Sometimes it is not deleted by helm delete
-    kubectl delete ns/${NS_BUILDER} --now > /dev/null 2>&1 # Sometimes it is not deleted by helm delete
-    kubectl delete ns/${NS_FUNCTION} --now > /dev/null 2>&1 # Sometimes it is not deleted by helm delete
+    kubectl delete ns/${NS} --now --force > /dev/null 2>&1 # Sometimes it is not deleted by helm delete
+    kubectl delete ns/${NS_BUILDER} --now --force > /dev/null 2>&1 # Sometimes it is not deleted by helm delete
+    kubectl delete ns/${NS_FUNCTION} --now --force > /dev/null 2>&1 # Sometimes it is not deleted by helm delete
 
     # Wait until all namespaces are actually deleted!
     emph "Awaiting deletion of namespaces..."
