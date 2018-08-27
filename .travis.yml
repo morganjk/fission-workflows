@@ -24,7 +24,7 @@ env:
     - FISSION_VERSION=0.9.1
     - HELM_VERSION=2.8.2
     - KUBECTL_VERSION=1.9.6
-    - E2E_ENABLED=$(if [ ${TRAVIS_PULL_REQUEST_SLUG} == "fission/fission-workflows" ]; then echo "y"; else echo "n"; fi)
+    - E2E_ENABLED=$(if [ "${TRAVIS_PULL_REQUEST_SLUG}" = "fission/fission-workflows" ]; then echo "y"; else echo "n"; fi)
 
 services:
   - docker
