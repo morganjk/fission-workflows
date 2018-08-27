@@ -30,6 +30,8 @@ services:
   - docker
 
 before_install:
+- echo "slug ${TRAVIS_PULL_REQUEST_SLUG}"
+- ehco "$(if [ "${TRAVIS_PULL_REQUEST_SLUG}" = "fission/fission-workflows" ]; then echo "y"; else echo "n"; fi)"
 - source ~/virtualenv/python3.6/bin/activate
 - curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 - sudo apt-get update
